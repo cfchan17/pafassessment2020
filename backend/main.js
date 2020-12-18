@@ -60,6 +60,8 @@ const MONGO_COLLECTION = process.env.MONGOCOLLECTION || 'thoughts';
 
 app.use(morgan('combined'))
 
+app.use(express.static(__dirname + '\\dist\\frontend'));
+
 app.post('/api/authenticate', express.json(), async (req, resp) => {
 	const username = req.body.username;
 	const password = req.body.password;
